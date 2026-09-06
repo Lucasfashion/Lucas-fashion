@@ -1,59 +1,66 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LUCAS FASHION - RDC Bukavu</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUCAS FASHION - Style Sans Limites</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-body{background:#f8fafc;color:#0f172a}
-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid #e2e8f0;display:flex;justify-content:space-between;align-items:center;padding:12px 16px}
-.logo{font-weight:900;font-size:22px}.logo span{color:#10b981}
-.hero{background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;text-align:center;padding:36px 18px;border-radius:0 0 32px 32px}
-.hero h1{font-size:34px;font-weight:900;line-height:1.05}
-.btn{background:#10b981;color:#fff;border:none;padding:14px 26px;border-radius:999px;font-weight:800;cursor:pointer}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.06);border:1px solid #f1f5f9;cursor:pointer}
-.img{height:170px;background:#f1f5f9;position:relative;overflow:hidden}.img img{width:100%;height:100%;object-fit:cover}
-.tag{position:absolute;top:10px;left:10px;background:#10b981;color:#fff;font-size:9px;font-weight:800;padding:5px 10px;border-radius:999px}
-.body{padding:12px}.title{font-weight:700;font-size:13px}.price{color:#10b981;font-weight:800;font-size:14px;margin-top:4px}
-.section{padding:22px 14px}
-.wa-float{position:fixed;bottom:20px;right:18px;background:#25D366;color:#fff;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;z-index:99}
-.marquee{background:#10b981;color:#fff;padding:8px 0;overflow:hidden;white-space:nowrap;font-weight:700;font-size:12px}
-.contact{background:#0f172a;color:#fff;border-radius:24px;padding:20px;margin-top:20px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#fff;font-family:Arial, sans-serif;overflow-x:hidden}
+.hero{position:relative;height:100vh;width:100%;overflow:hidden}
+.slide{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;transition:opacity 1.5s ease-in-out;background-size:cover;background-position:center}
+.slide.active{opacity:1}
+.slide::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5)}
+.content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;text-align:center;width:90%}
+.content h1{font-size:52px;font-weight:900;letter-spacing:3px;line-height:1.1;text-shadow:0 4px 20px rgba(0,0,0,0.8)}
+.content p{margin-top:15px;font-size:16px;letter-spacing:4px;opacity:0.9}
+.btn{margin-top:30px;display:inline-block;border:1px solid #fff;padding:14px 36px;border-radius:0;color:#fff;text-decoration:none;letter-spacing:2px;font-size:12px;transition:0.3s}
+.btn:hover{background:#fff;color:#000}
+.marquee{position:absolute;bottom:0;left:0;width:100%;background:rgba(0,0,0,0.8);padding:12px 0;overflow:hidden;white-space:nowrap;z-index:3;border-top:1px solid rgba(255,255,255,0.1)}
+.track{display:inline-block;animation:scroll 25s linear infinite}
+.track img{height:70px;width:70px;object-fit:cover;margin:0 15px;border-radius:8px;border:1px solid rgba(255,255,255,0.2)}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.dots{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);z-index:3;display:flex;gap:10px}
+.dot{width:30px;height:2px;background:rgba(255,255,255,0.3);transition:0.3s}
+.dot.active{background:#fff}
 </style>
 </head>
 <body>
-<a class="wa-float" href="https://wa.me/15793366483?text=Bonjour%20LUCAS%20FASHION" target="_blank">✆</a>
-<header><div class="logo">LUCAS<span>FASHION</span></div><div>🛒</div></header>
-<div class="marquee">🔥 LUCAS FASHION • RDC BUKAVU IBANDA FIZI • STYLE SANS LIMITES • WHATSAPP +1 579 336 6483 • 🔥</div>
 <div class="hero">
-<div style="background:rgba(16,185,129,.15);color:#6ee7b7;display:inline-block;padding:6px 14px;border-radius:999px;font-size:11px;font-weight:700;margin-bottom:14px">MAGASIN D'HABILLEMENT • RDC</div>
+<div class="slide active" style="background-image:url('shop1.jpg')"></div>
+<div class="slide" style="background-image:url('shop2.jpg')"></div>
+<div class="slide" style="background-image:url('shop3.jpg')"></div>
+
+<div class="content">
+<p>LUCAS FASHION</p>
 <h1>STYLE<br>SANS LIMITES</h1>
-<p style="opacity:.75;font-size:14px;margin-top:12px">Chapeaux • Chaussures • Chemises<br>📍 Commune Ibanda, Avenue Fizi</p>
-<button class="btn" style="margin-top:18px" onclick="document.getElementById('store').scrollIntoView({behavior:'smooth'})">Voir le catalogue</button>
+<a class="btn" href="https://wa.me/15793366483?text=Bonjour%20LUCAS%20FASHION">VOIR COLLECTION</a>
 </div>
-<div class="section" id="store">
-<div style="font-size:11px;color:#10b981;font-weight:800;letter-spacing:1.5px">NOS PRODUITS</div>
-<div style="font-size:24px;font-weight:900;margin:8px 0">Notre Collection</div>
-<p style="color:#64748b;font-size:13px;margin-bottom:16px">Cliquez pour commander sur WhatsApp.</p>
-<div class="grid">
-<div class="card" onclick="window.open('https://wa.me/15793366483?text=Je%20veux%20Casquette%20NY','_blank')"><div class="img"><span class="tag">TOP VENTE</span><img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400"></div><div class="body"><div class="title">Casquette NY Classic</div><div class="price">15 000 BIF</div></div></div>
-<div class="card" onclick="window.open('https://wa.me/15793366483?text=Je%20veux%20Chapeau%20Fedora','_blank')"><div class="img"><span class="tag">NOUVEAU</span><img src="https://images.unsplash.com/photo-1529391409740-59f1cea3f4c2?w=400"></div><div class="body"><div class="title">Chapeau Fedora Premium</div><div class="price">25 000 BIF</div></div></div>
-<div class="card" onclick="window.open('https://wa.me/15793366483?text=Je%20veux%20Collection%20Chapeaux','_blank')"><div class="img"><span class="tag">PACK</span><img src="https://images.unsplash.com/photo-1533827432537-70133748f5c8?w=400"></div><div class="body"><div class="title">Collection Chapeaux</div><div class="price">12 000 BIF</div></div></div>
-<div class="card" onclick="window.open('https://wa.me/15793366483?text=Je%20veux%20Chaussure%20Cuir','_blank')"><div class="img"><span class="tag">NOUVEAU</span><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400"></div><div class="body"><div class="title">Chaussure Cuir Classique</div><div class="price">45 000 BIF</div></div></div>
-<div class="card" onclick="window.open('https://wa.me/15793366483?text=Je%20veux%20Sneaker','_blank')"><div class="img"><span class="tag">TOP VENTE</span><img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=400"></div><div class="body"><div class="title">Sneaker Street Style</div><div class="price">38 000 BIF</div></div></div>
-<div class="card" onclick="window.open('https://wa.me/15793366483?text=Je%20veux%20Chemise','_blank')"><div class="img"><span class="tag">NOUVEAU</span><img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400"></div><div class="body"><div class="title">Chemise Lin Homme</div><div class="price">30 000 BIF</div></div></div>
+
+<div class="dots">
+<div class="dot active"></div><div class="dot"></div><div class="dot"></div>
 </div>
-<div class="contact">
-<h2>Une question ? Parlons-en</h2>
-<p style="opacity:.7;font-size:13px;margin-top:6px">📞 +1 579 336 6483<br>📍 RDC, Commune Ibanda, Avenue Fizi, Bukavu</p>
-<button class="btn" style="width:100%;margin-top:16px" onclick="window.open('https://wa.me/15793366483?text=Bonjour%20LUCAS%20FASHION','_blank')">Commander sur WhatsApp</button>
+
+<div class="marquee">
+<div class="track">
+<img src="shop1.jpg"><img src="shop2.jpg"><img src="shop3.jpg"><img src="shop1.jpg"><img src="shop2.jpg"><img src="shop3.jpg">
+<img src="shop1.jpg"><img src="shop2.jpg"><img src="shop3.jpg"><img src="shop1.jpg"><img src="shop2.jpg"><img src="shop3.jpg">
 </div>
 </div>
-<footer style="background:#020617;color:#64748b;text-align:center;padding:26px 16px;font-size:12px">
-<div style="color:#fff;font-weight:900;font-size:18px">LUCAS<span style="color:#10b981">FASHION</span></div>
-© 2026 LUCAS FASHION - RDC Bukavu
-</footer>
+</div>
+
+<script>
+let current=0;
+const slides=document.querySelectorAll('.slide');
+const dots=document.querySelectorAll('.dot');
+function nextSlide(){
+slides[current].classList.remove('active');
+dots[current].classList.remove('active');
+current=(current+1)%slides.length;
+slides[current].classList.add('active');
+dots[current].classList.add('active');
+}
+setInterval(nextSlide,6000);
+</script>
 </body>
 </html>
