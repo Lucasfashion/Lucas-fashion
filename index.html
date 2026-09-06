@@ -1,66 +1,51 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LUCAS FASHION - Style Sans Limites</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LUCAS FASHION</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#000;color:#fff;font-family:Arial, sans-serif;overflow-x:hidden}
+*{margin:0;padding:0;box-sizing:border-box}body{background:#000;color:#fff;font-family:Arial}
 .hero{position:relative;height:100vh;width:100%;overflow:hidden}
-.slide{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;transition:opacity 1.5s ease-in-out;background-size:cover;background-position:center}
+.slide{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;transition:opacity 1.5s;background-size:cover;background-position:center}
 .slide.active{opacity:1}
-.slide::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5)}
+.slide::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.55)}
 .content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;text-align:center;width:90%}
-.content h1{font-size:52px;font-weight:900;letter-spacing:3px;line-height:1.1;text-shadow:0 4px 20px rgba(0,0,0,0.8)}
-.content p{margin-top:15px;font-size:16px;letter-spacing:4px;opacity:0.9}
-.btn{margin-top:30px;display:inline-block;border:1px solid #fff;padding:14px 36px;border-radius:0;color:#fff;text-decoration:none;letter-spacing:2px;font-size:12px;transition:0.3s}
-.btn:hover{background:#fff;color:#000}
-.marquee{position:absolute;bottom:0;left:0;width:100%;background:rgba(0,0,0,0.8);padding:12px 0;overflow:hidden;white-space:nowrap;z-index:3;border-top:1px solid rgba(255,255,255,0.1)}
-.track{display:inline-block;animation:scroll 25s linear infinite}
-.track img{height:70px;width:70px;object-fit:cover;margin:0 15px;border-radius:8px;border:1px solid rgba(255,255,255,0.2)}
+.content h1{font-size:54px;font-weight:900;letter-spacing:2px;line-height:1}
+.btn{margin-top:22px;display:inline-block;border:1px solid #fff;padding:14px 34px;color:#fff;text-decoration:none;font-size:12px;letter-spacing:3px}
+.marquee{position:absolute;bottom:0;left:0;width:100%;background:rgba(0,0,0,.85);padding:10px 0;overflow:hidden;white-space:nowrap;z-index:3;border-top:1px solid #222}
+.track{display:inline-block;animation:scroll 20s linear infinite}
+.track img{height:75px;width:75px;object-fit:cover;margin:0 12px;border-radius:10px}
 @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.dots{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);z-index:3;display:flex;gap:10px}
-.dot{width:30px;height:2px;background:rgba(255,255,255,0.3);transition:0.3s}
-.dot.active{background:#fff}
 </style>
 </head>
 <body>
 <div class="hero">
-<div class="slide active" style="background-image:url('shop1.jpg')"></div>
-<div class="slide" style="background-image:url('shop2.jpg')"></div>
-<div class="slide" style="background-image:url('shop3.jpg')"></div>
+<div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1445205170230-053b83016050?w=900')"></div>
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=900')"></div>
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=900')"></div>
 
 <div class="content">
-<p>LUCAS FASHION</p>
-<h1>STYLE<br>SANS LIMITES</h1>
+<p style="letter-spacing:6px;font-size:11px;margin-bottom:10px">LUCAS FASHION</p>
+<h1>STYLE<br>SANS<br>LIMITES</h1>
 <a class="btn" href="https://wa.me/15793366483?text=Bonjour%20LUCAS%20FASHION">VOIR COLLECTION</a>
-</div>
-
-<div class="dots">
-<div class="dot active"></div><div class="dot"></div><div class="dot"></div>
 </div>
 
 <div class="marquee">
 <div class="track">
-<img src="shop1.jpg"><img src="shop2.jpg"><img src="shop3.jpg"><img src="shop1.jpg"><img src="shop2.jpg"><img src="shop3.jpg">
-<img src="shop1.jpg"><img src="shop2.jpg"><img src="shop3.jpg"><img src="shop1.jpg"><img src="shop2.jpg"><img src="shop3.jpg">
+<img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=200">
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200">
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=200">
+<img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=200">
+<img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=200">
+<img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=200">
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200">
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=200">
 </div>
 </div>
 </div>
-
 <script>
-let current=0;
-const slides=document.querySelectorAll('.slide');
-const dots=document.querySelectorAll('.dot');
-function nextSlide(){
-slides[current].classList.remove('active');
-dots[current].classList.remove('active');
-current=(current+1)%slides.length;
-slides[current].classList.add('active');
-dots[current].classList.add('active');
-}
-setInterval(nextSlide,6000);
+let c=0;const s=document.querySelectorAll('.slide');
+setInterval(()=>{s[c].classList.remove('active');c=(c+1)%s.length;s[c].classList.add('active')},6000)
 </script>
 </body>
 </html>
